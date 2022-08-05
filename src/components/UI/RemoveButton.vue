@@ -19,6 +19,7 @@
   color: salmon;
   cursor: pointer;
   font-weight: bold;
+  transition: 0.2s;
 }
 
 .remove-button:hover {

@@ -1,10 +1,10 @@
 <template>
   <CardWrapper>
-    <RemoveButton />
+    <RemoveButton @click="deleteResource(id)" />
     <h1><b> {{ title }}</b></h1>
     <p>{{ description }}</p>
     <div class="buttonGroup">
-      <ShowMoreButton :link="link"/>
+      <ShowMoreButton :link="link" />
     </div>
   </CardWrapper>
 </template>
@@ -14,7 +14,9 @@ import CardWrapper from './UI/CardWrapper.vue'
 import RemoveButton from './UI/RemoveButton.vue'
 import ShowMoreButton from './UI/ShowMoreButton.vue'
 export default {
+  inject: ['deleteResource'],
   props: {
+    id: String,
     title: String,
     description: String,
     link: String,

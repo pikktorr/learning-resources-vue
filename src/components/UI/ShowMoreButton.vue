@@ -1,31 +1,25 @@
 <template>
   <a :href="link" target="_blank" rel="noopener noreferrer">
-    <button class="show-more-button">
+    <CustomButton class="show-more-button">
       SHOW MORE
-    </button>
+    </CustomButton>
   </a>
 </template>
 
 <script>
+import CustomButton from "./CustomButton.vue";
 export default {
   props: {
     link: String,
   },
+  components: { CustomButton }
 }
 </script>
 
 <style scoped>
 .show-more-button {
-  background: none;
-  color: cadetblue;
-  border: 1px solid cadetblue;
-  border-radius: 2rem;
-  padding: 8px 10px;
-  cursor: pointer;
-}
-
-.show-more-button:hover {
-  background-color: cadetblue;
-  color: white;
+  padding: 6px 8px;
+  border: none;
+  background-color: rgba(96, 157, 159, 0.1);
 }
 </style>

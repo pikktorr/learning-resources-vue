@@ -11,6 +11,6 @@
   border-radius: 1rem;
   padding: 2rem;
   margin-bottom: 1rem;
-  max-width: 40rem;
+  width: 100%;
 }
 </style>

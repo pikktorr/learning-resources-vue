@@ -1,42 +1,24 @@
 <template>
   <TheHeader />
-  <ResourceList :resourceList="resourceList" />
+  <main class="main-container">
+    <ResourceSelector />
+  </main>
 </template>
 
 <script>
-import ResourceList from './components/ResourceList.vue';
 import TheHeader from './components/TheHeader.vue';
+import ResourceSelector from './components/ResourceSelector.vue';
 export default {
   data() {
     return {
-      resourceList: [
-        {
-          id: "vue-official-guide",
-          title: "Vue Official Guide",
-          description: "Vue is a JavaScript framework for building user interfaces. It builds on top of standard HTML, CSS and JavaScript, and provides a declarative and component-based programming model that helps you efficiently develop user interfaces, be it simple or complex.",
-          link: "https://vuejs.org/guide/introduction.html"
-        },
-        {
-          id: "react-official-guide",
-          title: "React Official Guide",
-          description: "React makes it painless to create interactive UIs. Design simple views for each state in your application, and React will efficiently update and render just the right components when your data changes.",
-          link: "https://reactjs.org/docs/getting-started.html"
-        },
-        {
-          id: "angular-official-guide",
-          title: "Angular Official Guide",
-          description: "Angular is an application design framework and development platform for creating efficient and sophisticated single-page apps.",
-          link: "https://angular.io/guide/developer-guide-overview"
-        },
-      ]
     };
   },
-  components: { ResourceList, TheHeader }
+  components: { TheHeader, ResourceSelector }
 }
 </script>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;700&family=Roboto+Slab:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;700&family=Roboto:wght@300;400;700&display=swap');
 
 * {
   margin: 0;
@@ -48,15 +30,24 @@ body {
   font-family: 'Comfortaa', cursive;
 }
 
+input,
+textarea {
+  min-height: 30px;
+  padding: 4px;
+  font-family: 'Roboto';
+  font-weight: 300;
+  font-size: 14px;
+}
+
 h1 {
   font-weight: 700;
   text-transform: uppercase;
 }
 
-p,
-a {
+p {
+  font-family: 'Roboto';
   font-weight: 300;
-  font-size: small;
+  font-size: 14px;
 }
 
 a {
@@ -66,5 +57,15 @@ a {
 
 a:visited {
   color: inherit
+}
+
+button {
+  transition: 0.2s;
+}
+
+.main-container {
+  padding: 2rem;
+  margin: 70px auto;
+  max-width: 40rem;
 }
 </style>
